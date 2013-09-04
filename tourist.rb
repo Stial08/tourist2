@@ -1,15 +1,13 @@
 require 'pry'
-class Toznurist
-  def initialize
-  end
+class Tourist
 end
 
 class OpenFile
   def open_file
-    file = File.new('/files/sample.input.txt',''r)
+    file = File.new('files/sample-input.txt','r')
     @array = []
     while line = file.gets
-      @array << file.split(" ") unless line == "\n"
+      @array << line.split(" ") unless line == "\n"
     end
   binding.pry
   end
@@ -22,5 +20,5 @@ class Jenifer < Tourist
 end
 
 ##calar 
-  file OpenFile.new
-  file.openfile
+  file = OpenFile.new
+  file.open_file
