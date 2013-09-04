@@ -16,7 +16,6 @@ class PrepareData
     open_file
     @iterations = (@array[0][0]).to_i
     @count = 2
-    @array_size = @array.count
     @position = 1
     @block = []
     @iterations.times do
@@ -31,7 +30,6 @@ class PrepareData
       @count += 1
     end
   end
-
 end
 
 class Steve < Tourist
