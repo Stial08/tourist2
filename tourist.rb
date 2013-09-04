@@ -9,14 +9,17 @@ class OpenFile
     while line = file.gets
       @array << line.split(" ") unless line == "\n"
     end
-  binding.pry
   end
 end
 
 class Steve < Tourist
+  def cheap_way
+  end
 end
 
 class Jenifer < Tourist
+  def fast_way
+  end
 end
 
 ##calar 
