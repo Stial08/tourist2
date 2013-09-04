@@ -12,6 +12,18 @@ class PrepareData
       @array << line.split(" ") unless line == "\n"
     end
   end
+  def separate_blocks
+    open_file
+    @iterations = (@array[0][0]).to_i
+    @count = 2
+    @array_size = @array.count
+    #@iterations.times do |x|
+     while @count <= @array_size
+       
+      end
+    #end
+  end
+
 end
 
 class Steve < Tourist
@@ -26,4 +38,4 @@ end
 
 ##calar 
   file = PrepareData.new
-  file.open_file
+  file.separate_blocks
