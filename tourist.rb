@@ -1,8 +1,10 @@
 require 'pry'
 class Tourist
+    def initialize
+    end
 end
 
-class OpenFile
+class PrepareData
   def open_file
     file = File.new('files/sample-input.txt','r')
     @array = []
@@ -23,5 +25,5 @@ class Jenifer < Tourist
 end
 
 ##calar 
-  file = OpenFile.new
+  file = PrepareData.new
   file.open_file
