@@ -17,11 +17,19 @@ class PrepareData
     @iterations = (@array[0][0]).to_i
     @count = 2
     @array_size = @array.count
-    #@iterations.times do |x|
-     while @count <= @array_size
-       
+    @position = 1
+    @block = []
+    @iterations.times do
+      @number = (@array[@position][0].to_i)
+      @complement = []
+      @number.times do
+        @complement << @array[@count]
+        @count +=1
       end
-    #end
+      @block << @complement
+      @position += @count - 1
+      @count += 1
+    end
   end
 
 end
