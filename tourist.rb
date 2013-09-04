@@ -31,7 +31,18 @@ class PrepareData
     end
   end
 end
-
+class Calculate < PrepareData
+  def across_ways
+    #A 
+      #->B
+        #-> C
+        #-> Z
+      #->C
+        #-> Z
+      #->Z
+      
+  end
+end
 class Steve < Tourist
   def cheap_way
   end
