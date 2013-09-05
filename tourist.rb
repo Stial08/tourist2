@@ -37,14 +37,14 @@ class PrepareData
       @number.times do
         @array[@count][2] = Time.parse(@array[@count][2])
         @array[@count][3] = Time.parse(@array[@count][3])
-        @complement << @array[@count] 
+        @array[@count][4] = @array[@count][4].to_f
+        @array[@count].each_slice(5) {|from, to, departure,check,cost| @complement << Flight.new(from,to,departure,check,cost) }
         @count +=1
       end
       @block << @complement
       @position += @count - 1
       @count += 1
     end
-    binding.pry
   end
 end
 class Calculate < PrepareData
