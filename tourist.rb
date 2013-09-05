@@ -61,7 +61,7 @@ class FindWays
     while @@count <= @block.length - 1
       ('A'..'Z').each do |x|
         (@block[@@count].length).times do |y|  
-           if @block[@@count][y].from == x and @block[@@count][y].to == x.next
+           if @block[@@count][y].from == x and (@block[@@count][y].to == x.next or(("{x.next}"..'Z').each {|x| x.next}) )
              pp @block[@@count][y]
            end
         end
