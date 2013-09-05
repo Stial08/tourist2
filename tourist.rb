@@ -1,7 +1,20 @@
 require 'pry'
-class Tourist
-    def initialize
-    end
+require 'time'
+require 'enumerator'
+class Flight
+  attr_accessor :from
+  attr_accessor :to
+  attr_accessor :departure
+  attr_accessor :check
+  attr_accessor :cost
+
+  def initialize(from, to, departure, check,cost)
+      @from = from
+      @to = to
+      @departure = departure
+      @check = check
+      @cost = cost
+  end
 end
 
 class PrepareData
@@ -22,37 +35,37 @@ class PrepareData
       @number = (@array[@position][0].to_i)
       @complement = []
       @number.times do
-        @complement << @array[@count]
+        @array[@count][2] = Time.parse(@array[@count][2])
+        @array[@count][3] = Time.parse(@array[@count][3])
+        @complement << @array[@count] 
         @count +=1
       end
       @block << @complement
       @position += @count - 1
       @count += 1
     end
+    binding.pry
   end
 end
 class Calculate < PrepareData
   def across_ways
-    #A 
-      #->B
-        #-> C
-        #-> Z
-      #->C
-        #-> Z
-      #->Z
-      
+    ##A 
+      ##->B
+        ##-> C
+        ##-> Z
+      ##->C
+        ##-> Z
+      ##->Z
   end
-end
-class Steve < Tourist
+  
   def cheap_way
   end
-end
 
-class Jenifer < Tourist
   def fast_way
   end
 end
 
 ##calar 
-  file = PrepareData.new
+  file = Calculate.new
   file.separate_blocks
+  file.across_ways
