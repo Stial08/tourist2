@@ -49,22 +49,27 @@ class PrepareData
     @block
   end
 end
-class Calculate
+class FindWays
   def initialize(block)
     @block = block
   end
   def across_ways
-    (@block[0].length).times do |x|
-      pp "from #{@block[0][x].from} to #{@block[0][x].to}"
-   end
+    #(@block[0].length).times do |x|
+    #pp "from #{@block[0][x].from} to #{@block[0][x].to}"
+    #end
+    @@count = 0
+    while @@count <= @block.length - 1
+      ('A'..'Z').each do |x|
+        (@block[@@count].length).times do |y|  
+           if @block[@@count][y].from == x and @block[@@count][y].to == x.next
+             pp @block[@@count][y]
+           end
+        end
+      end
+      pp "======="
+      @@count +=1
+    end
   end
-    ##A 
-    ##->B
-    ##-> C
-    ##-> Z
-    ##->C
-    ##-> Z
-    ##->Z
   def cheap_way
   end
 
@@ -74,6 +79,6 @@ end
 ##calar
 file = PrepareData.new
 datos = file.separate_blocks
-calculo = Calculate.new(datos)
+calculo = FindWays.new(datos)
 calculo.across_ways
 
