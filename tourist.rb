@@ -55,25 +55,22 @@ class FindWays
   end
   def across_ways
     @@count = 0
-   #pp @block[@@count].sort
-    #@block.sort! {|a,b| a}
-   #myarray.sort! { |a, b|  a.attribute <=> b.attribute } 
-    #@a = @block.sort_by { |block,key|
-      #puts key.from
-    #}
     while @@count <= @block.length - 1 
       ('A'..'Z').each do |x|
+        @ordered = []
         (@block[@@count].length).times do |y|  
            if @block[@@count][y].from == x and (@block[@@count][y].to == x.next or(("{x.next}"..'Z').each {|x| x.next}) )
-             pp @block[@@count][y]
+            @ordered << @block[@@count][y] unless @block[@@count][y] == nil
            end
         end
+      cheap_way(@ordered)
       end
-      pp "======="
+      pp "======"
       @@count +=1
     end
   end
-  def cheap_way
+  def cheap_way(way)
+    @data = way
   end
 
   def fast_way
